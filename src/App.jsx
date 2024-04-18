@@ -11,7 +11,7 @@ function App() {
   const [gas,setGas] = useState(null);
   const [flames,setFlames] = useState(null);  
   useEffect(() => {        
-    mqtt.connectAsync("ws://192.168.29.18:8080",{host:'192.168.29.18',port:8080,clientId:'123-client',username:'Manav1011',password:'Manav@1011'}).then(client => {      
+    mqtt.connectAsync("wss://aad6-2405-201-2024-b862-2f60-9f1f-19f8-8c78.ngrok-free.app",{host:'192.168.29.18',port:8080,clientId:'123-client',username:'Manav1011',password:'Manav@1011'}).then(client => {      
         client.subscribe("SENSOR_DATA")        
         client.on("message", (topic, message) => {   
           if(topic == "SENSOR_DATA"){            
